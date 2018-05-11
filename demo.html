@@ -78,7 +78,10 @@ function compute()
 		document.getElementById("module_summary_"+i).innerHTML=instances+" instance(s), "+""+redundancy;
 		
 		var instCost=instances*10;
+		
 		var storage=totalSize+daily*4+weekly*3+monthly*2+yearly+churn+duration;
+		if(instances==0)
+			storage=0;
 		var storageCost=storage*0.2;
 		if(redundancy=="grs")
 			storageCost*=2;
