@@ -302,6 +302,7 @@ function delRow(id)
 		div.removeChild(child);
 		earr[num]--;
 	}
+	editChurn=0;
 	compute();
 }
 function addRow(id)
@@ -348,7 +349,8 @@ function addRow(id)
 		num.setAttribute("id",newId);
 		
 	div.appendChild(newDiv);
-	
+	editChurn=0;
+	compute();
 }
 function addBackup()
 {
