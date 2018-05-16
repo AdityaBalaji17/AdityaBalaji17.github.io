@@ -48,11 +48,11 @@ var earr=[];
 var c_iaas=6.37;
 var c_ws=2.92;
 var c_wc=2.92;
-var c_sql=3;
-var c_sap=3;
-var c_hyper=2;
-var c_exch=3;
-var c_sh=3;
+var c_sql=1;
+var c_sap=1;
+var c_hyper=1;
+var c_exch=1;
+var c_sh=1;
 var churnVal=1;
 var editChurn=0;
 function setEdit()
@@ -203,7 +203,7 @@ function compute()
 		var storageCost=0;
 		if(editChurn==1)
 			churnVal=Number(document.getElementById("nhw7_"+i).getElementsByTagName("input")[0].value);
-		var storage=totalSize+totalSize*(churnVal/100)*nrp;
+		var storage=totalSize+totalSize*(churnVal/100)*Math.min(duration*30,daily)+totalSize*(churnVal*3/100)*Math.min(duration*4,weekly)+totalSize*(churnVal*15/100)*Math.min(duration,monthly)+totalSize*(churnVal*100/100)*Math.min(Math.ceil(duration/12),yearly);
 		if(storage<1000)
 			{
 				storageCost=0.024*storage;
