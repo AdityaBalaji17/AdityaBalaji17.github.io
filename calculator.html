@@ -204,6 +204,7 @@ function compute()
 		if(editChurn==1)
 			churnVal=Number(document.getElementById("nhw7_"+i).getElementsByTagName("input")[0].value);
 		var storage=totalSize+totalSize*(churnVal/100)*Math.min(duration*30,daily)+totalSize*(churnVal*3/100)*Math.min(duration*4,weekly)+totalSize*(churnVal*15/100)*Math.min(duration,monthly)+totalSize*(churnVal*100/100)*Math.min(Math.ceil(duration/12),yearly);
+		storage=nrp*totalSize*churnVal/100+totalSize;
 		if(storage<1000)
 			{
 				storageCost=0.024*storage;
